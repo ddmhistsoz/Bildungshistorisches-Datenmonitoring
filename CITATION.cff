@@ -1,0 +1,37 @@
+cff-version: 1.2.0
+message: "Wenn Sie diese Software nutzen oder darauf Bezug nehmen, zitieren Sie bitte die unten angegebene archivierte Version."
+title: "Bildungshistorisches Datenmonitoring. Ein Werkzeug zur Exploration, Analyse und Visualisierung bildungs- und sozialhistorischer Daten"
+abstract: >-
+  Modular aufgebautes Forschungswerkzeug (R/Shiny) zur strukturierten
+  Erfassung, Analyse und Visualisierung serieller und nicht-serieller
+  Daten zur Bildungs- und Sozialgeschichte mit Schwerpunkt auf dem
+  Deutschen Kaiserreich (1871-1918). Umfasst u. a. Georeferenzierung von
+  Schuelerdaten auf historischen Stadtplaenen und Verwaltungsgrenzen,
+  normierte Ortsregister (Gazetteer) und OCR-gestuetzte Erschliessung
+  gedruckter Tabellen. Die zugrunde liegenden Forschungsdaten sind nicht
+  enthalten.
+type: software
+authors:
+  - family-names: Mathie
+    given-names: Dennis
+    orcid: "https://orcid.org/0009-0005-7520-3253"
+    email: mathied@hsu-hh.de
+    affiliation: "Helmut-Schmidt-Universitaet / Universitaet der Bundeswehr Hamburg"
+version: 0.1.0
+date-released: "2026-10-11"
+license: LicenseRef-All-Rights-Reserved
+repository-code: "https://github.com/ddmhistsoz/Bildungshistorisches-Datenmonitoring"
+keywords:
+  - Historische Bildungsforschung
+  - Bildungsgeschichte
+  - Sozialgeschichte
+  - Deutsches Kaiserreich
+  - Digital History
+  - Georeferenzierung
+  - OCR
+  - R
+  - Shiny
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.23297658
+    description: "Archivierte, zugriffsbeschraenkte Version (Zenodo)"
