@@ -24,8 +24,23 @@ Das Werkzeug ist im Rahmen des Projekts *„Schülerpensionen und Schülerverbin
 - **Normierte Ortsregister (Gazetteer):** Aufbau eines Kreis-Gazetteers mit normalisierten Schlüsseln zur verlässlichen Zuordnung historischer Verwaltungseinheiten.
 - **OCR-gestützte Erschließung:** halbautomatische Erfassung gedruckter Tabellen aus digitalisierten Quellen.
 - **Interaktive Darstellung:** Karten, Diagramme und tabellarische Ranglisten; Export einzelner Darstellungen.
+- **Verknüpfung mit der Berufsstatistik:** Berufs- und Gewerbezählung 1895 auf Kreisebene (eigene Transkription), verknüpft mit den Berufsangaben der Väter in den Schülerverzeichnissen.
+- **Transparente Modellierung:** ein an den Fallstudien kalibriertes Zugangsmodell, das für eine gedachte Person Belege mit Fallzahl und Quelle zusammenstellt, statt eine Einzelfallprognose zu geben.
 
 Technisch basiert das Werkzeug auf **R** und **Shiny** (u. a. `sf`, `leaflet`, `terra`/`raster`, `magick`, `tesseract`, `arrow`) und ist modular aufgebaut, sodass es sich leicht erweitern lässt.
+
+## Funktionsumfang (Stand: Oktober 2026)
+
+| Bereich | Inhalt |
+|---|---|
+| **Datenerhebungen gesamtes Reich** | Geo-Visualisierung mit historischen Karten, Kreisen und Verwaltungsebenen, Wohnplätzen, Bahnhöfen, höheren Schulen (gefiltert nach Schultyp, Trägerschaft, Konfession, Jahr), Alumnaten und Choroplethen zu Schüleranteilen; Datenbearbeitung; **eigene Datensätze** mit beliebigem Spaltenschema hochladen, Ortsnamen gegen das Gazetteer abgleichen und als Karte darstellen |
+| **Fallbeispiele** | Wurzen, Attendorn, Frankfurt am Main sowie ein standortübergreifender Vergleich des Pensionswesens (Unterkunftsform, Pensionsgeber) |
+| **Reichsstatistik & Analysen** | Reichserhebung 1931 (Kreise, Länder, Geschlechtervergleich), Zeitvergleich der Verwaltungsgrenzen 1910/1931, Schüleranteile nach Bahnhofsnähe, Benchmark der Berufszählungen 1882–1950, Zeitreihen der Bundesstaaten |
+| **Gegenwartsdaten** | Schulstatistik der Bundesländer ab 2005/06, live über die GENESIS-Schnittstelle der Statistischen Ämter |
+| **Bildungsgeschichte** | Möglichkeitsraum für eine gedachte Person (Wohnort, Geburtsjahr, Geschlecht, Beruf des Vaters): Einschätzung, Wege, Zeitachse, Rahmen auf Ebene von Bundesstaat und Kreis sowie Belege aus den Fallstudien – jeweils mit Fallzahl und Quelle |
+| **Mappe** | Diagramme, Tabellen und Karten aus allen Modulen sammeln, kommentieren, ordnen und als Bericht (HTML oder Word) ausgeben |
+
+Optional lässt sich ein Sprachmodell anbinden (anbieteroffen; standardmäßig ausgeschaltet). Es schlägt Zuordnungen für nicht erkannte historische Ortsnamen vor und formuliert eine ausdrücklich als solche gekennzeichnete KI-Einschätzung zu Karten und Belegen. Zugangsschlüssel werden ausschließlich lokal hinterlegt.
 
 ## Fallstudien (Auswahl)
 
@@ -33,15 +48,39 @@ Wurzen, Attendorn, Laubach, Gütersloh und Frankfurt am Main – u. a. zur Unter
 
 ## Ansichten
 
-![Startansicht der Geo-Visualisierung über einer historischen Reichskarte](docs/01_overview_geo-visualisierung.png)
+![Geo-Visualisierung: höhere Schulen über einer historischen Reichskarte](docs/01_overview_geo-visualisierung.png)
 
-*Startansicht: Ebenen- und Analysemenü der Geo-Visualisierung (Basiskarte, historische Karten, Kreise, höhere Schulen, Choropleth u. a.).*
+*Geo-Visualisierung: höhere Schulen (gruppiert) über einer historischen Reichskarte mit Bundesstaaten; links das Ebenenmenü, rechts die Ebenensteuerung der Karte.*
 
 ![Höhere Schulen auf einer historischen topografischen Karte der Altmark](docs/02_historische_karte_altmark.png)
 
 *Verortung höherer Schulen auf einer historischen topografischen Karte mit zuschaltbaren Ebenen (Kreise, Eisenbahnlinien, Bundesstaaten).*
 
-Weitere Ansichten befinden sich im Ordner [`docs/`](docs/). Darstellungen auf Einzelpersonenebene (etwa Netzwerke einzelner Schüler) sind aus Datenschutz- und Urheberschaftsgründen bewusst **nicht** enthalten.
+![Zeitvergleich der Kreisgrenzen 1910 und 1931 in Mitteldeutschland](docs/03_zeitvergleich_verwaltungsgrenzen.png)
+
+*Zeitvergleich der Verwaltungsgrenzen: Kreise 1910 (blau, durchgezogen) und 1931 (rot, gestrichelt) übereinandergelegt – hier Thüringen, das 1920 aus den thüringischen Kleinstaaten gebildet wurde.*
+
+![Modul Bildungsgeschichte mit Steckbrief und Einschätzung](docs/04_bildungsgeschichte.png)
+
+*Bildungsgeschichte: Für eine gedachte Person (hier: Junge aus Olpe, Rheinprovinz, geboren 1875, Vater in der Landwirtschaft) stellt das Modul Belege zusammen – nächste höhere Schule, geografischer und sozialer Faktor, Berufsstruktur des Heimatkreises 1895 –, jeweils mit Fallzahl, Quelle und Unsicherheitsintervall.*
+
+![Mappe mit gesammelten Elementen für einen Bericht](docs/05_mappe_bericht.png)
+
+*Mappe: Elemente aus allen Modulen werden gesammelt, kommentiert und als HTML- oder Word-Bericht ausgegeben.*
+
+![Fallbeispiel Pensionswesen: Unterkunftsform in Attendorn 1826–1920](docs/06_fallbeispiel_unterkunftsform.png)
+
+*Fallbeispiel Pensionswesen: Anteil der Schüler bei den Eltern, im Konvikt und in Pension am Gymnasium Attendorn 1826–1920 (aggregiert).*
+
+![Benchmark der Berufszählung 1907](docs/07_berufszaehlung_benchmark.png)
+
+*Berufszählungs-Benchmark: Verteilung der Erwerbstätigen nach beruflicher Stellung, hier Berufszählung 1907.*
+
+![Gegenwartsdaten: Schülerzahlen nach Bundesländern seit 2005/06](docs/08_gegenwartsdaten.png)
+
+*Gegenwartsdaten: Schülerinnen und Schüler allgemeinbildender Schulen nach Bundesländern, abgerufen über die GENESIS-Schnittstelle.*
+
+Darstellungen auf Einzelpersonenebene (etwa Netzwerke einzelner Schüler, Namen oder Adressen aus den Schülerverzeichnissen) sind aus Datenschutz- und Urheberschaftsgründen bewusst **nicht** enthalten.
 
 ## Daten und Datenschutz
 
