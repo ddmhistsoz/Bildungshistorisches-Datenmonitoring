@@ -82,7 +82,7 @@ Wurzen, Attendorn, Laubach, Gütersloh und Frankfurt am Main – u. a. zur Unter
 
 ![Reichserhebung 1931: Anteil der Pensionsschüler je Land](docs/09_reichsstatistik_1931.png)
 
-*Reichserhebung 1931: Anteil der auswärtigen Schüler in Familienunterkunft (Pension) an allen Schülern der öffentlichen Knabenanstalten, je Land; grau: keine Angabe.*
+*Reichserhebung 1931: Anteil der auswärtigen Schüler in Familienunterkunft (Pension) an allen Schülern der öffentlichen Knabenanstalten, je Land der Erhebung (Hamburg schlüsselt die Auswärtigen nicht auf: keine Angabe).*
 
 ![Schüleranteile nach Bahnhofsnähe 1915](docs/10_bahnhofsnaehe.png)
 
